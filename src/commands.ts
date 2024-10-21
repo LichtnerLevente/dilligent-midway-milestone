@@ -15,3 +15,13 @@ export async function list(store: Store<RecipeType[]>, args: string[]) {
   console.log('Your recipes:');
   console.log(formatted);
 }
+
+export async function details(store:Store<RecipeType[]>, args: string[]) {
+
+  const id: number = Number(args[0]);
+
+  const recipes = new Recipe(store);
+  const recipe = await recipes.findById(id);
+  console.log(`ID: ${recipe?.id}`)
+  console.log(`Name: ${recipe?.name}`)
+}
