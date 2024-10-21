@@ -20,7 +20,7 @@ async function main() {
   try {
     return await createApp(store, args);
   } catch (error) {
-    console.error((error as Error).message);
+    console.error(`Error: ${(error as Error).message}`);
   }
 }
 
